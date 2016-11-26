@@ -71,7 +71,6 @@ void MainWindow::connectToHost(){
         if (socket_.waitForConnected(3000)){
             if (socket_.state() == QAbstractSocket::ConnectedState)
                 widget.actionConnect->setText("Disconnect");
-            //break;
             
         }
         else qDebug() << socket_.errorString();
@@ -122,14 +121,8 @@ void MainWindow::mousePressEvent(QMouseEvent* event){
     }
 }
 
-
-
 void MainWindow::mouseMoveEvent(QMouseEvent* event){
-    //QWidget * tmpW = QWidget::mouseGrabber();
-    //qDebug() << "mousegraber = " << typeid(*tmpW).name();
-    //int x = event->pos().x();
-    //int y = event->pos().y();
-    //QPoint local_xy = widget.testWidget->mapFromParent(event->pos());
+    //QWidget * tmpW = Qwidget.testWidget->mapFromParent(event->pos());
     QPoint local_xy = widget.testWidget->mapFromGlobal(event->globalPos());
     int x = local_xy.x();
     int y = local_xy.y();
@@ -159,18 +152,13 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
         }    
         
         if (resetPos){
-            //QPoint tmpPoint = widget.testWidget->mapToParent(QPoint(x,y));
             QPoint tmpPoint = widget.testWidget->mapToGlobal(QPoint(x,y));
-            //QPoint tmpPoint = widget.centralwidget->mapToGlobal(QPoint(x,y));
             QCursor::setPos(tmpPoint);
-            //QCursor::setPos(x, y);
         }
-        
-        //int deltaX = 
+
     }
 
     qDebug() << "height=" << height << " width=" << width << "dx=" << x << " dy=" << y << " local" << local_xy << widget.testWidget->mapToGlobal(QPoint(x,y)) << event->pos();
-
 }
 
 void MainWindow::readyRead(){
