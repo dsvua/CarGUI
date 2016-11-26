@@ -21,6 +21,7 @@
 #include <QDebug>
 #include <QMouseEvent>
 #include <QtConcurrent/QtConcurrentRun>
+#include <typeinfo>
 //#include <gstreamer-1.0/gst/gst.h>
 //#include <gstreamer-1.0/gst/app/gstappsink.h>
 //#include <stdlib.h>

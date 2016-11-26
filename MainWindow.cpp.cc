@@ -23,16 +23,18 @@ MainWindow::MainWindow() {
     QFuture<void> gst_ = QtConcurrent::run(streamParser);
     //setCentralWidget(openGLWidget);
     setWindowTitle(tr("Robotic Car"));
-    //setMouseTracking(true);
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
-    //connect(socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
     connect(&socket_, SIGNAL(readyRead()), this, SLOT(readyRead()));
+    connect(&socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
 }
 
 MainWindow::~MainWindow() {
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event){
+    //QWidget * tmpW = QWidget::mouseGrabber();
+    //qDebug() << "mousegraber = " << tmpW;
+
    
     switch (event->key()){
         case Qt::Key_Right:
@@ -79,7 +81,8 @@ void MainWindow::connectToHost(){
         socket_.disconnectFromHost();
         widget.actionConnect->setText("Connect");
         qDebug() << "Disconnected";       
-    }   
+    } 
+    this->setFocus();
 }
 
 void MainWindow::disconnectedFromHost(){
@@ -103,13 +106,14 @@ QString MainWindow::receiveMessage(){
 }
 
 void MainWindow::mousePressEvent(QMouseEvent* event){
-    if (event->button() == Qt::LeftButton && widget.openGLWidget->underMouse()){
+    //qDebug() << "mouse grabber" << typeid(*(QWidget::mouseGrabber())).name();
+    if (event->button() == Qt::LeftButton && widget.testWidget->underMouse()){
         if (!mouseGrabbed_){
             originalMouseCursor_ = this->cursor();
             originalMousePoint_ = QCursor::pos();
-            widgetCenter_.setX(widget.openGLWidget->width() / 2);
-            widgetCenter_.setY(widget.openGLWidget->height() / 2);
-            QPoint tmpPoint = widget.openGLWidget->mapToGlobal(widgetCenter_);
+            widgetCenter_.setX(widget.testWidget->width() / 2);
+            widgetCenter_.setY(widget.testWidget->height() / 2);
+            QPoint tmpPoint = widget.testWidget->mapToGlobal(widgetCenter_);
             QCursor::setPos(tmpPoint);
             mouseGrabbed_ = true;
             grabMouse();
@@ -118,14 +122,19 @@ void MainWindow::mousePressEvent(QMouseEvent* event){
     }
 }
 
+
+
 void MainWindow::mouseMoveEvent(QMouseEvent* event){
+    //QWidget * tmpW = QWidget::mouseGrabber();
+    //qDebug() << "mousegraber = " << typeid(*tmpW).name();
     //int x = event->pos().x();
     //int y = event->pos().y();
-    QPoint local_xy = widget.openGLWidget->mapFromParent(event->pos());
+    //QPoint local_xy = widget.testWidget->mapFromParent(event->pos());
+    QPoint local_xy = widget.testWidget->mapFromGlobal(event->globalPos());
     int x = local_xy.x();
     int y = local_xy.y();
-    int height = widget.openGLWidget->height();
-    int width = widget.openGLWidget->width();
+    int height = widget.testWidget->height();
+    int width = widget.testWidget->width();
     if (mouseGrabbed_){
 
         bool resetPos = false;
@@ -150,8 +159,8 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
         }    
         
         if (resetPos){
-            QPoint tmpPoint = widget.openGLWidget->mapToParent(QPoint(x,y));
-            tmpPoint = widget.centralwidget->mapToGlobal(tmpPoint);
+            //QPoint tmpPoint = widget.testWidget->mapToParent(QPoint(x,y));
+            QPoint tmpPoint = widget.testWidget->mapToGlobal(QPoint(x,y));
             //QPoint tmpPoint = widget.centralwidget->mapToGlobal(QPoint(x,y));
             QCursor::setPos(tmpPoint);
             //QCursor::setPos(x, y);
@@ -160,7 +169,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
         //int deltaX = 
     }
 
-    qDebug() << "height=" << height << " width=" << width << "dx=" << x << " dy=" << y << " local" << local_xy << widget.openGLWidget->mapToGlobal(QPoint(x,y)) << event->pos();
+    qDebug() << "height=" << height << " width=" << width << "dx=" << x << " dy=" << y << " local" << local_xy << widget.testWidget->mapToGlobal(QPoint(x,y)) << event->pos();
 
 }
 

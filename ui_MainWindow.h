@@ -17,7 +17,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QOpenGLWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -30,7 +29,7 @@ public:
     QAction *actionConnect;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QOpenGLWidget *openGLWidget;
+    QWidget *testWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
@@ -39,22 +38,22 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1039, 773);
+        MainWindow->resize(947, 624);
         actionConnect = new QAction(MainWindow);
         actionConnect->setObjectName(QStringLiteral("actionConnect"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        openGLWidget = new QOpenGLWidget(centralwidget);
-        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
+        testWidget = new QWidget(centralwidget);
+        testWidget->setObjectName(QStringLiteral("testWidget"));
 
-        gridLayout->addWidget(openGLWidget, 0, 0, 1, 1);
+        gridLayout->addWidget(testWidget, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1039, 19));
+        menubar->setGeometry(QRect(0, 0, 947, 19));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
