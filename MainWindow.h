@@ -21,9 +21,9 @@
 #include <QDebug>
 #include <QMouseEvent>
 #include <QtConcurrent/QtConcurrentRun>
-#include <gstreamer-1.0/gst/gst.h>
-#include <gstreamer-1.0/gst/app/gstappsink.h>
-#include <stdlib.h>
+//#include <gstreamer-1.0/gst/gst.h>
+//#include <gstreamer-1.0/gst/app/gstappsink.h>
+//#include <stdlib.h>
 
 
 class MainWindow : public QMainWindow {
@@ -52,6 +52,7 @@ protected:
 public slots:
     void connectToHost();
     void disconnectedFromHost();
+    void readyRead();
 };
 
 #endif /* _MAINWINDOW_H */

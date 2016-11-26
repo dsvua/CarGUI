@@ -26,6 +26,7 @@ MainWindow::MainWindow() {
     //setMouseTracking(true);
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
     //connect(socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
+    connect(&socket_, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
 MainWindow::~MainWindow() {
@@ -39,6 +40,9 @@ void MainWindow::keyPressEvent(QKeyEvent* event){
             break;
         case Qt::Key_Left:
             this->sendMessage("Left");
+            break;
+        case Qt::Key_Up:
+            this->sendMessage("respond");
             break;
         case Qt::Key_Enter:
         case Qt::Key_Return:
@@ -162,8 +166,13 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
 
 void MainWindow::streamParser(){
     qDebug() << "Stream parser";
-    GstFlowReturn new_preroll(GstAppSink *appsink, gpointer data) {
-        g_print ("Got preroll!\n");
-        return GST_FLOW_OK;
-    }
+    //GstFlowReturn new_preroll(GstAppSink *appsink, gpointer data) {
+    //    g_print ("Got preroll!\n");
+    //    return GST_FLOW_OK;
+    //}
+}
+
+void MainWindow::readyRead(){
+    qDebug() << "reading...";
+    qDebug() << receiveMessage();
 }
