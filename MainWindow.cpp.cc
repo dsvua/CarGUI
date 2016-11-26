@@ -20,7 +20,7 @@ MainWindow::MainWindow() {
     mouseGrabbed_ = false;
     mouseBorder_ = 1;
     mouseIgnoreMoveRadius_ = 30;
-    QFuture<void> gst_ = QtConcurrent::run(streamParser);
+    //QFuture<void> gst_ = QtConcurrent::run(streamParser);
     //setCentralWidget(openGLWidget);
     setWindowTitle(tr("Robotic Car"));
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
@@ -171,14 +171,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
 
     qDebug() << "height=" << height << " width=" << width << "dx=" << x << " dy=" << y << " local" << local_xy << widget.testWidget->mapToGlobal(QPoint(x,y)) << event->pos();
 
-}
-
-void MainWindow::streamParser(){
-    qDebug() << "Stream parser";
-    //GstFlowReturn new_preroll(GstAppSink *appsink, gpointer data) {
-    //    g_print ("Got preroll!\n");
-    //    return GST_FLOW_OK;
-    //}
 }
 
 void MainWindow::readyRead(){

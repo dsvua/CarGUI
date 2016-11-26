@@ -22,9 +22,7 @@
 #include <QMouseEvent>
 #include <QtConcurrent/QtConcurrentRun>
 #include <typeinfo>
-//#include <gstreamer-1.0/gst/gst.h>
-//#include <gstreamer-1.0/gst/app/gstappsink.h>
-//#include <stdlib.h>
+
 
 
 class MainWindow : public QMainWindow {
@@ -45,7 +43,6 @@ private:
     QPoint originalMousePoint_;
     int mouseBorder_;
     int mouseIgnoreMoveRadius_;
-    static void streamParser();
 protected:
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
