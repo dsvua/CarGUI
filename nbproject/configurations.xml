@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>MainWindow.h</itemPath>
-      <itemPath>/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -16,7 +15,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>MainWindow.cpp.cc</itemPath>
-      <itemPath>/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -30,7 +28,12 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>/home/serhiy/git-modules/qt-gstreamer/src/QGlib</Elem>
+    <Elem>/home/serhiy/git-modules/qt-gstreamer/src/QGst</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="4">
@@ -49,37 +52,19 @@
             <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
             <pElem>/usr/include/gstreamer-1.0</pElem>
             <pElem>/usr/lib/x86_64-linux-gnu/gstreamer-1.0/include</pElem>
+            <pElem>/usr/local/include/Qt5GStreamer</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerOptionItem>`pkg-config --libs gstreamer-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-allocators-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-app-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-audio-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-base-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-check-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-controller-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-fft-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-net-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-pbutils-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-plugins-base-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-riff-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-rtp-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-rtsp-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-sdp-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-tag-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gstreamer-video-1.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs glib-2.0`</linkerOptionItem>
+            <linkerLibFileItem>/usr/local/lib/libQt5GStreamer-1.0.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libQt5GStreamerUi-1.0.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstqt5videosink.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libQt5GLib-2.0.so</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.h"
+      <item path="/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt"
             ex="false"
             tool="3"
             flavor2="0">
@@ -101,7 +86,7 @@
       </toolsSet>
       <qt>
         <buildMode>1</buildMode>
-        <modules>core gui widgets</modules>
+        <modules>core gui widgets network opengl</modules>
       </qt>
       <compileType>
         <cTool>
@@ -109,6 +94,13 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/gstreamer-1.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/gstreamer-1.0/include</pElem>
+            <pElem>/usr/local/include/Qt5GStreamer</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -116,13 +108,14 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>/usr/local/lib/libQt5GStreamer-1.0.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libQt5GStreamerUi-1.0.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/StreamRtpClient.h"
+      <item path="/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt"
             ex="false"
             tool="3"
             flavor2="0">

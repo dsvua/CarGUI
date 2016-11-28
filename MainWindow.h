@@ -22,7 +22,16 @@
 #include <QMouseEvent>
 #include <QtConcurrent/QtConcurrentRun>
 #include <typeinfo>
-
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGst/Ui/GraphicsVideoSurface>
+#include <QGst/Ui/GraphicsVideoWidget>
+#include <QGLWidget>
+#include <QGridLayout>
+#include <QGst/Global>
+#include <QGst/ElementFactory>
+#include <QGst/Pipeline>
+#include <QGst/Parse>
 
 
 class MainWindow : public QMainWindow {
@@ -43,6 +52,10 @@ private:
     QPoint originalMousePoint_;
     int mouseBorder_;
     int mouseIgnoreMoveRadius_;
+    char * caps_;
+    QString pipeDescr_;
+    QGst::PipelinePtr pipeline_;
+    
 protected:
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);

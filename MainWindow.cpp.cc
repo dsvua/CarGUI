@@ -11,6 +11,8 @@
  * Created on November 25, 2016, 11:19 AM
  */
 
+#include <qt4/QtGui/qpainterpath.h>
+
 #include "MainWindow.h"
 
 MainWindow::MainWindow() {
@@ -21,8 +23,82 @@ MainWindow::MainWindow() {
     mouseBorder_ = 1;
     mouseIgnoreMoveRadius_ = 30;
     //QFuture<void> gst_ = QtConcurrent::run(streamParser);
-    //setCentralWidget(openGLWidget);
     setWindowTitle(tr("Robotic Car"));
+    
+    //-------------------------
+    QGraphicsScene *scene = new QGraphicsScene;
+    qDebug() << scene->sceneRect();
+    QGraphicsView *view = new QGraphicsView (scene);
+    view->setViewport(new QGLWidget); //recommended
+    //QGridLayout * main_layout = new QGridLayout(widget.testWidget);
+    //main_layout->addWidget(view);
+    //widget.testWidget->setLayout(main_layout);
+    //widget.testWidget->show();
+    
+    QGst::Ui::GraphicsVideoSurface *surface = new QGst::Ui::GraphicsVideoSurface(view);
+    //... 
+    //...
+    QGst::Ui::GraphicsVideoWidget *videoWidget = new QGst::Ui::GraphicsVideoWidget;
+    videoWidget->setSurface(surface);
+    scene->addItem(videoWidget);
+    QGridLayout * scene_layout = new QGridLayout(widget.testWidget);
+    scene_layout->addWidget(view);
+    widget.testWidget->setLayout(scene_layout);
+    QGst::ElementPtr rtpbin = QGst::ElementFactory::make("gstrtpbin");
+    qDebug() << "created rtpbin";
+    QGst::ElementPtr source = QGst::ElementFactory::make("udpsrc", "src");
+    qDebug() << "created source";
+    QGst::ElementPtr rtph264depay = QGst::ElementFactory::make("rtph264depay");
+    qDebug() << "created rtph264depay";
+    QGst::ElementPtr avdec_h264 = QGst::ElementFactory::make("avdec_h264");
+    qDebug() << "created avdec_h264";
+    QGst::ElementPtr videoconvert = QGst::ElementFactory::make("videoconvert");
+    qDebug() << "created videoconvert";
+    QGst::ElementPtr videoscale = QGst::ElementFactory::make("videoscale");
+    qDebug() << "created videoscale";
+    QGst::ElementPtr sink = surface->videoSink();
+    qDebug() << "created sink";
+
+    //pipeline_ = QGst::Parse::launch(pipeDescr_).dynamicCast<QGst::Pipeline>();
+    //pipeline_ = QGst::Parse::launch(&argv[]);;
+    
+    pipeline_ = QGst::Pipeline::create();
+    qDebug() << "QGst::Pipeline::create()";
+    //pipeline_->add(rtpbin);
+
+    source->setProperty("port", 9000);
+    source->setProperty("caps", QGst::Caps::fromString("application/x-rtp,"
+            " media=(string)video, "
+            "clock-rate=(int)90000, encoding-name=(string)H264"));
+    pipeline_->add(source);
+    //if(rtpbin->link(source) == false)
+    //    qDebug("Link source failed");
+    pipeline_->add(rtph264depay);
+    if(source->link(rtph264depay) == false)
+        qDebug("Link rtph264depay failed");
+    pipeline_->add(avdec_h264);
+    if(rtph264depay->link(avdec_h264) == false)
+        qDebug("Link avdec_h264 failed");
+    pipeline_->add(videoconvert);
+    if(avdec_h264->link(videoconvert) == false)
+        qDebug("Link videoconvert failed");
+    pipeline_->add(videoscale);
+    if(videoconvert->link(videoscale) == false)
+        qDebug("Link videoscale failed");
+    pipeline_->add(sink);
+    if(videoscale->link(sink) == false)
+        qDebug("Link sink failed");
+           
+    pipeline_->setState(QGst::StatePlaying);
+    
+    qDebug() <<  "videoWidget->rect()" << videoWidget->rect();
+
+    
+    //setCentralWidget(view);
+
+    //-------------------------
+    
+    
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
     connect(&socket_, SIGNAL(readyRead()), this, SLOT(readyRead()));
     connect(&socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));

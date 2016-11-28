@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=`pkg-config --libs gstreamer-1.0` `pkg-config --libs gstreamer-allocators-1.0` `pkg-config --libs gstreamer-app-1.0` `pkg-config --libs gstreamer-audio-1.0` `pkg-config --libs gstreamer-base-1.0` `pkg-config --libs gstreamer-check-1.0` `pkg-config --libs gstreamer-controller-1.0` `pkg-config --libs gstreamer-fft-1.0` `pkg-config --libs gstreamer-net-1.0` `pkg-config --libs gstreamer-pbutils-1.0` `pkg-config --libs gstreamer-plugins-base-1.0` `pkg-config --libs gstreamer-riff-1.0` `pkg-config --libs gstreamer-rtp-1.0` `pkg-config --libs gstreamer-rtsp-1.0` `pkg-config --libs gstreamer-sdp-1.0` `pkg-config --libs gstreamer-tag-1.0` `pkg-config --libs gstreamer-video-1.0` `pkg-config --libs glib-2.0`  
+LDLIBSOPTIONS=/usr/local/lib/libQt5GStreamer-1.0.so /usr/local/lib/libQt5GStreamerUi-1.0.so /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstqt5videosink.so /usr/local/lib/libQt5GLib-2.0.so
 
 nbproject/qt-${CND_CONF}.mk: nbproject/qt-${CND_CONF}.pro FORCE
 	${QMAKE} VPATH=. -o qttmp-${CND_CONF}.mk nbproject/qt-${CND_CONF}.pro

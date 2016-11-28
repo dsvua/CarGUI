@@ -13,6 +13,7 @@
 
 #include <QApplication>
 #include "MainWindow.h"
+#include <QGst/Init>
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -20,6 +21,8 @@ int main(int argc, char *argv[]) {
 
 
     QApplication app(argc, argv);
+    QGst::init(&argc, &argv);
+    
     MainWindow window;
     // create and show your widgets here
     window.show();
