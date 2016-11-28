@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
@@ -29,7 +30,7 @@ public:
     QAction *actionConnect;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QWidget *testWidget;
+    QGraphicsView *testWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
@@ -45,7 +46,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        testWidget = new QWidget(centralwidget);
+        testWidget = new QGraphicsView(centralwidget);
         testWidget->setObjectName(QStringLiteral("testWidget"));
 
         gridLayout->addWidget(testWidget, 0, 0, 1, 1);

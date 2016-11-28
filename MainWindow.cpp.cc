@@ -28,22 +28,17 @@ MainWindow::MainWindow() {
     //-------------------------
     QGraphicsScene *scene = new QGraphicsScene;
     qDebug() << scene->sceneRect();
-    QGraphicsView *view = new QGraphicsView (scene);
-    view->setViewport(new QGLWidget); //recommended
-    //QGridLayout * main_layout = new QGridLayout(widget.testWidget);
-    //main_layout->addWidget(view);
-    //widget.testWidget->setLayout(main_layout);
-    //widget.testWidget->show();
+    //QGraphicsView *view = new QGraphicsView (scene);
+    widget.testWidget->setScene(scene);
+    widget.testWidget->setViewport(new QGLWidget);
     
-    QGst::Ui::GraphicsVideoSurface *surface = new QGst::Ui::GraphicsVideoSurface(view);
+    QGst::Ui::GraphicsVideoSurface *surface = new QGst::Ui::GraphicsVideoSurface(widget.testWidget);
     //... 
     //...
     QGst::Ui::GraphicsVideoWidget *videoWidget = new QGst::Ui::GraphicsVideoWidget;
     videoWidget->setSurface(surface);
     scene->addItem(videoWidget);
-    QGridLayout * scene_layout = new QGridLayout(widget.testWidget);
-    scene_layout->addWidget(view);
-    widget.testWidget->setLayout(scene_layout);
+
     QGst::ElementPtr rtpbin = QGst::ElementFactory::make("gstrtpbin");
     qDebug() << "created rtpbin";
     QGst::ElementPtr source = QGst::ElementFactory::make("udpsrc", "src");
