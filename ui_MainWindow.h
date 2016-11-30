@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
@@ -21,6 +20,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include <QGst/Ui/VideoWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -30,7 +30,7 @@ public:
     QAction *actionConnect;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QGraphicsView *testWidget;
+    QGst::Ui::VideoWidget *testWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
@@ -46,7 +46,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        testWidget = new QGraphicsView(centralwidget);
+        testWidget = new QGst::Ui::VideoWidget(centralwidget);
         testWidget->setObjectName(QStringLiteral("testWidget"));
 
         gridLayout->addWidget(testWidget, 0, 0, 1, 1);

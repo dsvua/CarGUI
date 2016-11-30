@@ -32,6 +32,7 @@
 #include <QGst/ElementFactory>
 #include <QGst/Pipeline>
 #include <QGst/Parse>
+#include <QGst/Ui/VideoWidget>
 
 
 class MainWindow : public QMainWindow {
@@ -55,6 +56,7 @@ private:
     char * caps_;
     QString pipeDescr_;
     QGst::PipelinePtr pipeline_;
+    //QGst::Ui::VideoWidget *testWidget;
     
 protected:
     void keyPressEvent(QKeyEvent *event);

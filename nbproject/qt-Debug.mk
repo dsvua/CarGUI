@@ -692,15 +692,6 @@ moc_MainWindow.cpp: ui_MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qinputmethod.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
@@ -709,6 +700,8 @@ moc_MainWindow.cpp: ui_MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -753,6 +746,13 @@ moc_MainWindow.cpp: ui_MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qthread.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtConcurrent/qtconcurrentstoredfunctioncall.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/QGLWidget \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/qgl.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qopengl.h \
@@ -899,15 +899,6 @@ build/Debug/GNU-Linux/MainWindow.cpp.o: MainWindow.cpp.cc MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qinputmethod.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
@@ -916,6 +907,8 @@ build/Debug/GNU-Linux/MainWindow.cpp.o: MainWindow.cpp.cc MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -960,6 +953,13 @@ build/Debug/GNU-Linux/MainWindow.cpp.o: MainWindow.cpp.cc MainWindow.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qthread.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtConcurrent/qtconcurrentstoredfunctioncall.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/QGLWidget \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/qgl.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qopengl.h \
@@ -1085,15 +1085,6 @@ build/Debug/GNU-Linux/main.o: main.cpp ../../Qt5.7.0/5.7/gcc_64/include/QtWidget
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
-		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
@@ -1102,6 +1093,8 @@ build/Debug/GNU-Linux/main.o: main.cpp ../../Qt5.7.0/5.7/gcc_64/include/QtWidget
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -1146,6 +1139,13 @@ build/Debug/GNU-Linux/main.o: main.cpp ../../Qt5.7.0/5.7/gcc_64/include/QtWidget
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qthread.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtConcurrent/qtconcurrentstoredfunctioncall.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGraphicsView \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qpainter.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/QGLWidget \
 		../../Qt5.7.0/5.7/gcc_64/include/QtOpenGL/qgl.h \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qopengl.h \

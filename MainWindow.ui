@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QGraphicsView" name="testWidget"/>
+     <widget class="QGst::Ui::VideoWidget" name="testWidget" native="true"/>
     </item>
    </layout>
   </widget>
