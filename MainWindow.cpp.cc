@@ -18,7 +18,7 @@
 MainWindow::MainWindow() {
     widget.setupUi(this);
     port_ = 8080;
-    host_ = "localhost";
+    host_ = "192.168.192.14";
     mouseGrabbed_ = false;
     mouseBorder_ = 1;
     mouseIgnoreMoveRadius_ = 30;
@@ -42,11 +42,14 @@ MainWindow::MainWindow() {
 
     pipeline_ = QGst::Pipeline::create();
     qDebug() << "QGst::Pipeline::create()";
+    //pipeline_->add(rtpbin);
+
     source->setProperty("port", 9000);
     source->setProperty("caps", QGst::Caps::fromString("application/x-rtp,"
             " media=(string)video, width=1024, height=768, "
             "clock-rate=(int)90000, encoding-name=(string)H264"));
     pipeline_->add(source);
+    //if(rtpbin->link(source) == false)
     qDebug("Linked source");
     pipeline_->add(rtph264depay);
     if(source->link(rtph264depay) == false)
@@ -67,7 +70,14 @@ MainWindow::MainWindow() {
     //widget.testWidget->watchPipeline(pipeline_);
     widget.testWidget->setVideoSink(sink);
     pipeline_->setState(QGst::StatePlaying);
+    
+    qDebug() <<  "Widget->rect()" << widget.testWidget->rect();
+
+    //setCentralWidget(testWidget);
+
     //-------------------------
+    
+    
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
     connect(&socket_, SIGNAL(readyRead()), this, SLOT(readyRead()));
     connect(&socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
@@ -76,7 +86,10 @@ MainWindow::MainWindow() {
 MainWindow::~MainWindow() {
 }
 
-void MainWindow::keyPressEvent(QKeyEvent* evsent){
+void MainWindow::keyPressEvent(QKeyEvent* event){
+    //QWidget * tmpW = QWidget::mouseGrabber();
+    //qDebug() << "mousegraber = " << tmpW;
+
    
     switch (event->key()){
         case Qt::Key_Right:
@@ -147,6 +160,7 @@ QString MainWindow::receiveMessage(){
 }
 
 void MainWindow::mousePressEvent(QMouseEvent* event){
+    //qDebug() << "mouse grabber" << typeid(*(QWidget::mouseGrabber())).name();
     if (event->button() == Qt::LeftButton && widget.testWidget->underMouse()){
         if (!mouseGrabbed_){
             originalMouseCursor_ = this->cursor();
@@ -163,6 +177,7 @@ void MainWindow::mousePressEvent(QMouseEvent* event){
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent* event){
+    //QWidget * tmpW = Qwidget.testWidget->mapFromParent(event->pos());
     QPoint local_xy = widget.testWidget->mapFromGlobal(event->globalPos());
     int x = local_xy.x();
     int y = local_xy.y();
@@ -199,6 +214,10 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
     }
 
     qDebug() << "height=" << height << " width=" << width << "dx=" << x << " dy=" << y << " local" << local_xy << widget.testWidget->mapToGlobal(QPoint(x,y)) << event->pos();
+}
+
+void MainWindow::wheelEvent(QWheelEvent* event){
+    
 }
 
 void MainWindow::readyRead(){

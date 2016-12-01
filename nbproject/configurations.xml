@@ -27,8 +27,8 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
+      <itemPath>/home/serhiy/FileServer/Netbeans/CarGUI/net_protocol.txt</itemPath>
     </logicalFolder>
-    <itemPath>/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>/home/serhiy/git-modules/qt-gstreamer/src/QGlib</Elem>
@@ -64,11 +64,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="MainWindow.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainWindow.h" ex="false" tool="3" flavor2="0">
@@ -115,11 +110,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/serhiy/NetBeansProjects/CarGUI/net_protocol.txt"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="MainWindow.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainWindow.h" ex="false" tool="3" flavor2="0">
