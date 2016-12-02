@@ -78,6 +78,7 @@ MainWindow::MainWindow() {
     //-------------------------
     
     
+    connect(widget.actionConfigure, SIGNAL(triggered()), this, SLOT(configureIP()));
     connect(widget.actionConnect, SIGNAL(triggered()), this, SLOT(connectToHost()));
     connect(&socket_, SIGNAL(readyRead()), this, SLOT(readyRead()));
     connect(&socket_, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
@@ -223,4 +224,17 @@ void MainWindow::wheelEvent(QWheelEvent* event){
 void MainWindow::readyRead(){
     qDebug() << "reading...";
     qDebug() << receiveMessage();
+}
+
+void MainWindow::configureIP(){
+    QDialog *confDialog = new QDialog(0,0);
+    Ui_Conf configUi;
+    configUi.IPaddress = host_;
+    configUi.IPport = QString::number(port_);
+    configUi.setupUi(confDialog);
+    if (confDialog->exec() == QDialog::Accepted){
+        host_ = configUi.getIP();
+        port_ = configUi.getPort().toInt();
+    }
+    
 }

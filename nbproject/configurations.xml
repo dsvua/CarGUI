@@ -4,16 +4,19 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Conf.h</itemPath>
       <itemPath>MainWindow.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>Conf.ui</itemPath>
       <itemPath>MainWindow.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Conf.cpp.cc</itemPath>
       <itemPath>MainWindow.cpp.cc</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -64,6 +67,12 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="Conf.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Conf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Conf.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MainWindow.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainWindow.h" ex="false" tool="3" flavor2="0">
@@ -110,6 +119,12 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="Conf.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Conf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Conf.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MainWindow.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainWindow.h" ex="false" tool="3" flavor2="0">

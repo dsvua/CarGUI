@@ -48,13 +48,26 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionConnect"/>
+   <addaction name="actionConfigure"/>
   </widget>
   <action name="actionConnect">
    <property name="text">
     <string>Connect</string>
    </property>
   </action>
+  <action name="actionConfigure">
+   <property name="text">
+    <string>Configuration</string>
+   </property>
+  </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QGst::Ui::VideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qgst::ui::videowidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

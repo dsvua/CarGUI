@@ -33,7 +33,7 @@
 #include <QGst/Pipeline>
 #include <QGst/Parse>
 #include <QGst/Ui/VideoWidget>
-
+#include "ui_Conf.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -68,6 +68,7 @@ public slots:
     void connectToHost();
     void disconnectedFromHost();
     void readyRead();
+    void configureIP();
 };
 
 #endif /* _MAINWINDOW_H */

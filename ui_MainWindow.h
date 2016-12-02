@@ -28,6 +28,7 @@ class Ui_MainWindow
 {
 public:
     QAction *actionConnect;
+    QAction *actionConfigure;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QGst::Ui::VideoWidget *testWidget;
@@ -42,6 +43,8 @@ public:
         MainWindow->resize(947, 624);
         actionConnect = new QAction(MainWindow);
         actionConnect->setObjectName(QStringLiteral("actionConnect"));
+        actionConfigure = new QAction(MainWindow);
+        actionConfigure->setObjectName(QStringLiteral("actionConfigure"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -66,6 +69,7 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         toolBar->addAction(actionConnect);
+        toolBar->addAction(actionConfigure);
 
         retranslateUi(MainWindow);
 
@@ -76,6 +80,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionConnect->setText(QApplication::translate("MainWindow", "Connect", 0));
+        actionConfigure->setText(QApplication::translate("MainWindow", "Configuration", 0));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
     } // retranslateUi
 
