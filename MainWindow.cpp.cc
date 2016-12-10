@@ -218,7 +218,15 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event){
 }
 
 void MainWindow::wheelEvent(QWheelEvent* event){
-    
+    int numDegrees = event->delta();
+    qDebug() << "numDegrees" << numDegrees << "\n";
+    if (numDegrees > 0){
+        sendMessage("Forward:200");
+    }
+    if (numDegrees < 0){
+        sendMessage("Backward:200");
+    }    
+    event->ignore();
 }
 
 void MainWindow::readyRead(){

@@ -20,3 +20,4 @@ GRight:number       # like GRight:10    - turn gripper 10 degree right
 GLeft:number
 GClose:number       # like GClose:10    - close gripper for 10 degree
 GOpen:number
+Reset:0             # resets car
